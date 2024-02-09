@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Questions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #quizQuestions {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-left: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>Quiz Questions</h1>
     <section style="display: flex;justify-content: space-between;">
         <div>Attempt: <span id="attemptCount">0</span></div>
@@ -15,8 +66,9 @@
 
     <button id="submitButton">Submit</button>
     <button id="nextButton" style="display:none">Next Question</button>
+    <button id="resetButton" style="display:none"  onclick="location.reload()">Reset Quiz</button>
     
-
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         let score = 0;
@@ -47,6 +99,9 @@
                         $('#nextButton').hide();
                     } else {
                         alert('End of Quiz!');
+                        document.getElementById("resetButton").style.display="block";
+                        $('#submitButton').hide();
+                        $('#nextButton').hide();
                     }
                 });
 

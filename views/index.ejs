@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #container {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <a href="/register"><button>register</button></a>
-    <a href="/login"><button>login</button></a>
+    <div id="container">
+    <h1>Quize App</h1>
+    <div>
+    <a href="/register"><button>Register</button></a>
+    <a href="/login"><button>Login</button></a>
+    </div>
+    <p>Test your general knowledge✌️</p>
+    </div>
 </body>
 </html>
